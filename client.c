@@ -77,13 +77,13 @@ void recv_msg_handler() {
 }
 
 int main(int argc, char **argv){
-	if(argc != 2){
-		printf("Usage: %s <port>\n", argv[0]);
+	if(argc != 3){
+		printf("Usage: %s <IP> <port>\n", argv[0]);
 		return EXIT_FAILURE;
 	}
 
-	char *ip = "127.0.0.1";
-	int port = atoi(argv[1]);
+	char *ip = argv[1];
+	int port = atoi(argv[2]);
 
 	signal(SIGINT, catch_ctrl_c_and_exit);
 
