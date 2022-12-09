@@ -10,7 +10,7 @@
 #include <sys/types.h>
 #include <signal.h>
 
-#define MAX_CLIENTS 100
+#define MAX_CLIENTS 3
 #define BUFFER_SZ 2048
 
 static _Atomic unsigned int cli_count = 0;
@@ -114,8 +114,9 @@ void *handle_client(void *arg){
 		leave_flag = 1;
 	} else{
 		strcpy(cli->name, name);
-		sprintf(buff_out, "%s has joined\n", cli->name);
-		printf("%s", buff_out);
+		//sprintf(buff_out, "%s has joined\n", cli->name);
+		sprintf(buff_out, "%s has joined\n", cli_count+1);
+		//printf("%s", buff_out);
 		send_message(buff_out, cli->uid);
 	}
 
