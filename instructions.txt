@@ -1,0 +1,4 @@
+1) Create "test.txt" and add the port number 4002. 
+2) Compile instances of server.c(gcc -o s server.c -pthread)
+3) Run both the executables (./s <IP> <PORT>)
+4) Compile and run multiple executables of client.c
